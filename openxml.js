@@ -309,7 +309,7 @@ OpenXmlRelationship
                     }
                 } else {
                     if (openXml.util.isBase64(documentToOpen)) {
-                        openFromBase64Internal(this, documentToOpen);
+                        openFromBase64InternalAsync(this, documentToOpen);
                     }
                     else if (typeof documentToOpen === 'string') {
                         openFromFlatOpcInternal(this, documentToOpen);
@@ -323,7 +323,7 @@ OpenXmlRelationship
 
         openXml.OpenXmlPackage.prototype.openFromBase64 = function (base64data) {
             throw new Error("This method has been removed! Please use openFromBase64Async instead.");
-            openFromBase64Internal(this, base64data);
+            openFromBase64InternalAsync(this, base64data);
         }
 
         openXml.OpenXmlPackage.prototype.openFromBase64Async = function (base64data, cb) {
